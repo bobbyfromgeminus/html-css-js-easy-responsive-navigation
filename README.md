@@ -1,2 +1,2 @@
-# html-css-easy-responsive-navigation
-[HTML, CSS] Easy Responsive Navigation
+# html-css-js-easy-responsive-navigation
+[HTML, CSS, JS] Easy Responsive Navigation

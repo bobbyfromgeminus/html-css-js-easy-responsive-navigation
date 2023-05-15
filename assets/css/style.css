@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --blue: rgb(45, 64, 89);
+    --red: rgb(234, 84, 85);
+    --red-dark: rgb(184, 42, 42);
+    --beige: rgb(222, 205, 195);
+    --light: rgb(229, 229, 229);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    resize: both;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 250px 80px 1fr 60px;
+}
+
+header {
+    background-color: var(--blue);
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+nav {
+    background-color: var(--red);
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+nav mark {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+
+    nav mark {
+        display: block;
+        width: 60px;
+        height: 60px;
+        position: fixed;
+        right: 0;
+        top: 33%;
+        background-color: var(--red);
+        background-image: url('../svg/bars-solid.svg');
+        background-position: center;
+        background-size: 40%;
+        background-repeat: no-repeat;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        cursor: pointer;
+    }
+
+}
+
+nav section {
+    height: 100%;
+    width: 100%;
+    padding: 0 10%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+nav section a {
+    padding: 0 1.25rem;
+    color: var(--light);
+    line-height: 80px;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+nav section a:hover {
+    background-color: var(--red-dark);
+}
+
+nav section button {
+    display: none;
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+    background-color: white;
+    color: var(--red);
+    font-weight: 600;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+
+    nav section {
+        display: none;
+        position: fixed;
+        flex-direction: column;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, .6);
+        backdrop-filter: blur(.5rem);
+    }
+
+    nav section a {
+        padding: 0 1.25rem;
+        color: var(--light);
+        line-height: 60px;
+        font-weight: 500;
+        font-size: 1.2rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav section button {
+        display: block;
+    }
+
+}
+
+.show-nav {
+    display: flex;
+}
+
+main {
+    background-color: var(--light);
+    padding: 3rem 10%;
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        grid-column: 1/2;
+        grid-row: 2/4;
+    }
+}
+
+footer {
+    background-color: var(--blue);
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
